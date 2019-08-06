@@ -1,0 +1,16 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body -%}
+    <h2>Modifier la page</h2>
+    <div class="span9">
+        {{ form(edit_form) }}
+    </div>
+    <div class="span12">
+        <ul class="record_actions">
+            <a href="{{ path('adminPages') }}">
+                <i class="icon-backward"></i> Retour à la liste
+            </a>
+            {{ form(delete_form) }}
+        </ul>
+    </div>
+{% endblock %}

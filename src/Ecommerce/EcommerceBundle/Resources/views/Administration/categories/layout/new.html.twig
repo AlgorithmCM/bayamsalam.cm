@@ -1,0 +1,19 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body -%}
+    <h2>Création de catégorie</h2>
+    <div class="span9">
+
+        <form action="{{ path('adminCategories_create') }}" method="POST" {{ form_enctype(form) }}>
+            {{ form(form) }}
+        </form>
+
+    </div>
+    <div class="span12">
+        <ul class="record_actions">
+            <a href="{{ path('adminCategories') }}">
+                <i class="icon-backward"></i> Retour à la liste
+            </a>
+        </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block titre %}bayamsalam.cm - N° 1 du E-Commerce à Douala-Cameroun, Livraison Gratuite, 48h Maximum, Prix Familial, Moins Cher qu'au Marché{% endblock %}</title>
+        <meta name="keywords" content="{% block motsCles %}bayamsalam, ecommerce, douala, cameroun, Livraison gratuite, moins cher, bas prix, marché, famille, familial{% endblock %}" />
+        <meta name="description" content="{% block description %}{% endblock %}" />
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/bootstrap-responsive.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}" />
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <button class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse" type="button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="brand" href="{{ path('produits') }}">bayamsalam.cm</a>
+                <div class="nav-collapse collapse">
+                    {% render(controller('EcommerceBundle:Produits:recherche')) %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% block body %}{% endblock %}
+<hr />
+<footer id="footer" class="vspace20">
+    <div class="container">
+        <div class="row">
+            <div class="span4 offset1">
+                <h4><i class="icon-info-sign"></i> Informations</h4>
+                <ul class="nav nav-stacked">
+                    {% render(controller('PagesBundle:Pages:menu')) %}
+                </ul>
+            </div>
+            <div class="span4">
+                <h4><i class="icon-building"></i> Notre entrepôt</h4>
+                <p><i class="icon-map-marker"></i>&nbsp;{{ adresse }}</p>
+                <p><i class="icon-flag"></i> Site 100% Camerounais</p>
+                <p><i class="icon-ok"></i> Consommons Camerounais comme les Autres</p>
+            </div>
+            <div class="span2">
+                <h4><i class="icon-off"></i> Nous contacter</h4>
+                <p><i class="icon-phone"></i>&nbsp;Tel: {{ telephone }}</p>
+                <p>{{ email }}</p>
+                <p>Livraison Gratuite en 48H</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span4 offset1">
+                <p>Suivez-nous sur <a href="#" target="_blanc">Facebook <i class="icon-facebook-sign"></i></a></p>
+                <p>Contactez-nous sur <a href="#" target="_blanc">WhatsApp <i class="icon-group"></i></a></p>
+            </div>
+            <div class="span4">
+                <p><i class="icon-thumbs-up"></i> Meilleurs Produits / Meilleurs Prix</p>
+                <p><i class="icon-double-angle-down"></i> Moins cher qu'au marché</p>
+            </div>
+            <div class="span2">
+                <p>Douala Uniquement</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span4 offset1">
+                <p>&copy; Copyright {{ 'now'|date('Y') }} - bayamsalam.cm</p>
+            </div>
+            <div class="span4">
+                <p>by <i class="icon-fighter-jet"> <a href="algorithm.cm" target="_blanc"></i>algorithm</a></p>
+            </div>
+            <div class="span2">
+                <p><i class="icon-lock"></i> Site Sécurisé</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="{{ asset('js/jquery-1.10.0.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.js') }}"></script>
+<script src="{{ asset('bundles/pages/ckeditor/ckeditor.js') }}"></script>
+{% block javascripts %}{% endblock %}
+</body>
+</html>
