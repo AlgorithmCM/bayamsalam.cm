@@ -21,7 +21,7 @@ class UtilisateursController extends Controller {
 
         if (!$facture) {
             $this->get('session')->getFlashBag()->add('error', 'Une erreur est survenue');
-            return $this->redirect($this->generateUrl('facutres'));
+            return $this->redirect($this->generateUrl('factures'));
         }
 
         $this->container->get('setNewFacture')->facture($facture)->Output('Facture.pdf');
